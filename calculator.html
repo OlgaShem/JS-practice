@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Функции</title>
+</head>
+<body>
+<script>
+
+let a = +prompt("Введите число", 0),
+	b = +prompt("Введите число", 0),
+	c = prompt("Выберите действие: + - / *");
+
+	if (c=="+") {
+		function Add (a,b) {
+		document.write (a+b);
+		} 
+	Add(a,b);
+	}
+
+	else if (c=="-") {
+		function Sub (a,b) {
+		document.write (a-b);
+		} 
+	Sub(a,b);
+	}
+
+	else if (c=="*") {
+		function Mul (a,b) {
+		document.write (a*b);
+		} 
+	Mul(a,b);
+	}
+
+	else if (c=="/") {
+		function Div (a,b) {
+			if(b!==0){
+			document.write (a/b);
+			}
+		} 
+	Div(a,b);
+	}
+
+
+
+</script>
+
+</body>
+</html>

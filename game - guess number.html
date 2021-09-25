@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p>Введите число <span id=myspan></span>: <input type="text" id="mynum"></p>
+    <button onclick="f1()">Угадать</button>
+ 
+    <p id="out"></p>
+    <p id="temp-out"></p>
+    <script>
+	var prNum, tempOut;
+prNum = Math.floor((Math.random() * 100) + 1);
+console.log(prNum);
+var mymin = 1; 
+var mymax = 100; 
+myspan.innerHTML = "от " + mymin + " до "  + mymax;
+ 
+function f1(){
+    var num, out;
+ 
+    num = document.getElementById('mynum').value;
+    out = document.getElementById('out');
+ 
+    if (num == prNum) {
+        out.innerHTML = 'Вы угадали!!!';
+    }
+    else if (num > prNum){
+        out.innerHTML = 'Вы ввели число больше чем нужно';
+        mymax = num;
+    }
+    else if (num < prNum){
+        out.innerHTML = 'Вы ввели число меньше чем нужно';
+        mymin = num;
+    }
+}
+	
+	</script>
+</body>
+</html>

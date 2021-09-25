@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style> 
+		div {
+			width: 200px;
+			height: 200px;
+			background: #ddd;
+		}
+
+
+	</style>
+	<script>
+
+		window.onload = function() {
+		document.getElementById("but").onclick = function (){
+		let div = document.getElementsByTagName("div")[0];
+		
+
+
+			if (div.style.background =="") { //переключаться между цветами  
+			div.style.background = "yellow";
+			}
+
+			 else  { 
+				div.style.background = "";
+				
+			}
+			
+		}
+	}
+
+	</script>
+</head>
+<body>
+	<button id="but">Click</button>
+<div> </div>	
+
+</body>
+</html>

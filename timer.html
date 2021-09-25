@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Таймер</title>
+        <script type="text/javascript">
+           
+
+
+	window.onload = function() {
+	document.getElementById("startButton").onclick = function (){
+
+    sec = 0;
+	min = 0;
+	hour = 0;
+    setInterval(tick, 800);
+	}
+
+    document.getElementById("Reset").onclick = function (){
+        sec = -1;
+        get("timer").innerHTML = sec;
+    }
+}
+
+function tick() {
+    sec++;
+    if (sec >= 60) { 
+        min++;
+        sec = sec - 60;
+    }
+    if (min >= 60) {
+        hour++;
+        min = min - 60;
+    }
+    if (sec < 10) { 
+        if (min < 10) {
+            if (hour < 10) {
+                document.getElementById('timer').innerHTML ='0' + hour + ':0' + min + ':0' + sec;
+            } else {
+                document.getElementById('timer').innerHTML = hour + ':0' + min + ':0' + sec;
+            }
+        } else {
+            if (hour < 10) {
+                document.getElementById('timer').innerHTML = '0' + hour + ':' + min + ':0' + sec;
+            } else {
+                document.getElementById('timer').innerHTML = hour + ':' + min + ':0' + sec;
+            }
+        }
+    } else {
+        if (min < 10) {
+            if (hour < 10) {
+                document.getElementById('timer').innerHTML = '0' + hour + ':0' + min + ':' + sec;
+            } else {
+                document.getElementById('timer').innerHTML = hour + ':0' + min + ':' + sec;
+            }
+        } else {
+            if (hour < 10) {
+                document.getElementById('timer').innerHTML = '0' + hour + ':' + min + ':' + sec;
+            } else {
+                document.getElementById('timer').innerHTML = hour + ':' + min + ':' + sec;
+            }
+        }
+    }
+}
+
+        </script>
+    </head>
+    <body>
+
+        <div id="timer">00:00:00</div>
+	<input id="startButton" type="button" value="Start" />
+    <input id="Reset" type="button" value="Reset" />
+    </body>
+</html>

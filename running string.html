@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання 5</title>
+    <script>
+        window.onload = function () {
+            let string = new String(prompt('Введіть свій рядок для відображення','Текст'));
+            let width = window.innerWidth;
+            let posit = width;
+            let div = document.getElementById('running_str');
+            div.innerHTML = string;
+            
+            let moveText = function (){ 
+                div.style.left = posit + 'px';
+                posit -= 2;
+                if (posit < -200){
+                    posit = width;
+                    console.log(posit);
+                }
+            }
+            setInterval(moveText, 25);
+        }
+    </script>
+</head>
+<body>
+   <div style='background-color: green; padding: 10px; position: relative; overflow: hidden;'>
+        <div id='running_str' style='font-size: 30px; color: yellow; position: relative;'></div>   
+   </div>
+</body>
+</html>
